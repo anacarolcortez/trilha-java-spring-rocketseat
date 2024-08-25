@@ -1,4 +1,4 @@
-package br.com.temosvagas.gestao_vagas.modules.candidates.exceptions;
+package br.com.temosvagas.gestao_vagas.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;

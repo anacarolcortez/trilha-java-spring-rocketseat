@@ -1,4 +1,4 @@
-package br.com.temosvagas.gestao_vagas.modules.candidates.models;
+package br.com.temosvagas.gestao_vagas.modules.companies.models;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -17,11 +17,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity(name = "company")
 @Data
-@Entity(name="candidate")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Candidate {
+public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -30,19 +30,21 @@ public class Candidate {
     @NotBlank(message = "Nome não deve ser vazio")
     private String name;
 
-    @Email(message = "E-mail inválido")
-    private String email;
+    private String cpnj;
 
     @NotBlank
     @Pattern(regexp = "\\S+", message = "Username não deve conter espaço")
     private String username;
 
+    @Email(message = "E-mail inválido")
+    private String email;
+
     @Length(min = 8, max = 20, message = "A senha deve ter entre 8 e 20 caracteres")
     private String password;
 
+    private String website;
+
     private String description;
-    
-    private String curriculum;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

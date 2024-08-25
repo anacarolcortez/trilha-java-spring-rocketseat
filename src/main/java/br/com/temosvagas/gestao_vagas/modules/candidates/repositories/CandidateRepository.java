@@ -1,4 +1,4 @@
-package br.com.temosvagas.gestao_vagas.modules.candidates.services;
+package br.com.temosvagas.gestao_vagas.modules.candidates.repositories;
 
 import java.util.Optional;
 import java.util.UUID;
