@@ -48,5 +48,9 @@ public class Company {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    public Company(UUID id){
+        this.id = id;
+    }
     
 }

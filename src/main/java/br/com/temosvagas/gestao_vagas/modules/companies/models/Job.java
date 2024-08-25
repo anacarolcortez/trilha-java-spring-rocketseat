@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import br.com.temosvagas.gestao_vagas.modules.companies.models.dtos.JobDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,6 +30,7 @@ public class Job {
     @NotBlank(message = "Campo descrição não deve ser vazio")
     private String description;
 
+    @NotBlank(message = "Campo nível não deve ser vazio")
     private String level;
 
     private String benefits;
@@ -39,4 +41,13 @@ public class Job {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    public Job(JobDTO dto){
+        this.id = dto.getId();
+        this.description = dto.getDescription();
+        this.level = dto.getLevel();
+        this.benefits = dto.getBenefits();
+        this.company = new Company(dto.getCompany_id());
+        this.createdAt = dto.getCreatedAt();
+    }
 }
