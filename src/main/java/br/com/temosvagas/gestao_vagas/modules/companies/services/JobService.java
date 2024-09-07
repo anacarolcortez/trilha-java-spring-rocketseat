@@ -23,7 +23,6 @@ public class JobService {
             entity.setCompany(company);
             return this.jobRepository.save(entity);
         } catch (CompanyNotFoundException e) {
-            e.printStackTrace();
             throw new Exception(e.getMessage());
         }
     }
