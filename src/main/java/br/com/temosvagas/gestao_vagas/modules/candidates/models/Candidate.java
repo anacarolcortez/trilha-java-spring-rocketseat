@@ -37,7 +37,7 @@ public class Candidate {
     @Pattern(regexp = "\\S+", message = "Username não deve conter espaço")
     private String username;
 
-    @Length(min = 8, max = 20, message = "A senha deve ter entre 8 e 20 caracteres")
+    @Length(min = 8, message = "A senha deve ter no mínimo 8 caracteres")
     private String password;
 
     private String description;
