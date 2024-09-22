@@ -47,7 +47,7 @@ public class Job {
         this.description = dto.getDescription();
         this.level = dto.getLevel();
         this.benefits = dto.getBenefits();
-        this.company = new Company(dto.getCompany_id());
+        this.company = new Company(dto.getCompanyId());
         this.createdAt = dto.getCreatedAt();
     }
 }

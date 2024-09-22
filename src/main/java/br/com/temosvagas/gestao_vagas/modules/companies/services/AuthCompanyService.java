@@ -1,5 +1,8 @@
 package br.com.temosvagas.gestao_vagas.modules.companies.services;
 
+import java.time.Duration;
+import java.time.Instant;
+
 import org.apache.tomcat.websocket.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,9 +38,9 @@ public class AuthCompanyService {
             throw new AuthenticationException("Usuário/senha inválidos");
         }
 
-        Algorithm algorithm = Algorithm.HMAC256(superSecretKey);
-        
+        Algorithm algorithm = Algorithm.HMAC256(superSecretKey);        
         return JWT.create()
+            .withExpiresAt(Instant.now().plus(Duration.ofHours(2)))
             .withIssuer("vagasdev")
             .withSubject(company.getId().toString())
             .sign(algorithm);

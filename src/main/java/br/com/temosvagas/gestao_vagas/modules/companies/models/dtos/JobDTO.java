@@ -27,8 +27,7 @@ public class JobDTO {
 
     private String benefits;
 
-    @NotNull(message="Campo idCompany não pode ser nulo")
-    private UUID company_id;
+    private UUID companyId;
 
     private LocalDateTime createdAt;
     
@@ -37,7 +36,7 @@ public class JobDTO {
         this.description = job.getDescription();
         this.level = job.getLevel();
         this.benefits = job.getBenefits();
-        this.company_id = job.getCompany().getId();
+        this.companyId = job.getCompany().getId();
         this.createdAt = job.getCreatedAt();
     }
 }
